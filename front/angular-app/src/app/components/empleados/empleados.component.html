@@ -1,0 +1,31 @@
+<h3>Empleados</h3>
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Correo</th>
+    <th>Cargo</th>
+    <th>Acciones</th>
+  </tr>
+  <tr *ngFor="let empleado of empleados">
+    <td>{{empleado.nombres}} {{empleado.apellidos}}</td>
+    <td>{{empleado.correo}}</td>
+    <td>{{empleado.cargo?.nombre}}</td>
+    <td><button (click)="deleteEmpleado(empleado.id)">Eliminar</button></td>
+  </tr>
+</table>
+
+<div>
+  <h4>Agregar Empleado</h4>
+  <form (ngSubmit)="addEmpleado()">
+    <input type="text" [(ngModel)]="newEmpleado.nombres" name="nombres" placeholder="Nombre" required />
+    <input type="text" [(ngModel)]="newEmpleado.apellidos" name="apellidos" placeholder="Apellidos" required />
+    <input type="email" [(ngModel)]="newEmpleado.correo" name="correo" placeholder="Correo" required />
+    <input type="text" [(ngModel)]="newEmpleado.telefono" name="telefono" placeholder="Teléfono" />
+    <input type="text" [(ngModel)]="newEmpleado.dni" name="dni" placeholder="DNI" required />
+    <input type="number" [(ngModel)]="newEmpleado.sueldo" name="sueldo" placeholder="Sueldo" required />
+    <select [(ngModel)]="newEmpleado.cargo.id" name="cargo">
+      <option *ngFor="let cargo of cargos" [value]="cargo.id">{{cargo.nombre}}</option>
+    </select>
+    <button type="submit">Agregar</button>
+  </form>
+</div>

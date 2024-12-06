@@ -1,0 +1,19 @@
+<h3>Cargos</h3>
+<table>
+  <tr>
+    <th>Cargo</th>
+    <th>Acciones</th>
+  </tr>
+  <tr *ngFor="let cargo of cargos">
+    <td>{{cargo.nombre}}</td>
+    <td><button (click)="deleteCargo(cargo.id)">Eliminar</button></td>
+  </tr>
+</table>
+
+<div>
+  <h4>Agregar Cargo</h4>
+  <form (ngSubmit)="addCargo()">
+    <input type="text" [(ngModel)]="newCargo.nombre" name="nombre" placeholder="Cargo" required />
+    <button type="submit">Agregar</button>
+  </form>
+</div>

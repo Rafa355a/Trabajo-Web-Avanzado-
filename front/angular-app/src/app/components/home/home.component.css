@@ -1,0 +1,212 @@
+/* Fondo suave, colores vintage y lofi */
+
+/* Contenedor con un fondo suave y sombra */
+.container {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    padding: 40px;
+    margin-left: 2%;
+    width: 90%;
+    max-width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    overflow-y: auto;
+}
+
+/* Titulo principal */
+h2 {
+    font-size: 2.5rem;
+    color: #ff6347;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* Cerrar sesión y agregar empleados */
+.logout-btn, .add-btn, .action-btn, form button {
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 1rem;
+}
+
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+.add-btn {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    margin-right: 2px;
+    padding-right: 10px;
+}
+
+.add-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Tabla ajustada al contenedor */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de las celdas */
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #ff6347;
+    color: white;
+    font-weight: bold;
+}
+
+/* Hover en filas */
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Botones de acciones */
+.acciones {
+    display: flex;
+    justify-content: space-around;
+}
+
+.action-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.action-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Botón de eliminar */
+.delete-btn {
+    background-color: #dc3545;
+    padding-right: 5px;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+    padding-right: 5px;
+}
+
+/* Formularios */
+.form-container {
+    margin: 50px;
+    
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+}
+
+/* Estilo de los inputs en los formularios */
+form input {
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    background-color: #f3f3f3;
+    transition: background-color 0.3s ease, border 0.2s ease;
+}
+
+/* Estilo cuando el input está enfocado */
+form input:focus {
+    background-color: #fff;
+    border-color: #ff6347;
+    outline: none;
+}
+
+/* Botón en el formulario */
+form button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+/* Hover en el botón */
+form button:hover {
+    background-color: #218838;
+}
+
+/* Botón para cerrar el formulario */
+.close-form {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.close-form:hover {
+    background-color: #c82333;
+    margin-top: 10px;
+}
+
+/* Ajustes para que la tabla se ajuste al contenedor */
+.table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed; /* Asegura que la tabla se ajuste dentro del contenedor */
+    border-collapse: collapse;
+}

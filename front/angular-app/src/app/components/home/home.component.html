@@ -1,0 +1,72 @@
+<div class="container">
+    <h2>Bienvenido al Home</h2>
+
+    <!-- Cerrar sesión en la esquina -->
+    <button class="logout-btn" (click)="logout()">Cerrar sesión</button>
+    <button class="add-btn" (click)="toggleAddForm()">Agregar Empleado</button>
+
+    <!-- Tabla de empleados -->
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>DNI</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                    <th>Sueldo</th>
+                    <th>Cargo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let empleado of empleados">
+                    <td>{{ empleado.nombres }}</td>
+                    <td>{{ empleado.apellidos }}</td>
+                    <td>{{ empleado.dni }}</td>
+                    <td>{{ empleado.telefono }}</td>
+                    <td>{{ empleado.correo }}</td>
+                    <td>{{ empleado.sueldo }}</td>
+                    <td>{{ empleado.cargo.nombre }}</td>
+                    <td class="acciones">
+                        <button (click)="toggleEditForm(empleado)" class="action-btn">Editar</button>
+                        <button (click)="deleteEmpleado(empleado.id)" class="action-btn delete-btn">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Formulario de agregar empleado -->
+    <div *ngIf="showAddForm" class="form-container">
+        <h3>Agregar Empleado</h3>
+        <button class="close-form" (click)="toggleAddForm()">X</button>
+        <form (ngSubmit)="addEmpleado()">
+            <input [(ngModel)]="newEmpleado.nombres" placeholder="Nombre" name="nombres" />
+            <input [(ngModel)]="newEmpleado.apellidos" placeholder="Apellidos" name="apellidos" />
+            <input [(ngModel)]="newEmpleado.dni" placeholder="DNI" name="dni" />
+            <input [(ngModel)]="newEmpleado.telefono" placeholder="Teléfono" name="telefono" />
+            <input [(ngModel)]="newEmpleado.correo" placeholder="Correo" name="correo" />
+            <input [(ngModel)]="newEmpleado.sueldo" placeholder="Sueldo" name="sueldo" />
+            <input [(ngModel)]="newEmpleado.cargo" placeholder="Cargo" name="cargo" />
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+
+    <!-- Formulario de editar empleado -->
+    <div *ngIf="showEditForm" class="form-container">
+        <h3>Editar Empleado</h3>
+        <button (click)="showEditForm = false" class="close-form">X</button>
+        <form (ngSubmit)="editEmpleado()">
+            <input [(ngModel)]="selectedEmpleado.nombres" placeholder="Nombre" name="nombres" />
+            <input [(ngModel)]="selectedEmpleado.apellidos" placeholder="Apellidos" name="apellidos" />
+            <input [(ngModel)]="selectedEmpleado.dni" placeholder="DNI" name="dni" />
+            <input [(ngModel)]="selectedEmpleado.telefono" placeholder="Teléfono" name="telefono" />
+            <input [(ngModel)]="selectedEmpleado.correo" placeholder="Correo" name="correo" />
+            <input [(ngModel)]="selectedEmpleado.sueldo" placeholder="Sueldo" name="sueldo" />
+            <input [(ngModel)]="selectedEmpleado.cargo" placeholder="Cargo" name="cargo" />
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+</div>

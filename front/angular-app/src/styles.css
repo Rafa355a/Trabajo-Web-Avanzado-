@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    height: 100vh; /* Hacer que el body ocupe toda la altura */
+    background: linear-gradient(135deg, rgba(255, 204, 255, 0.5), rgba(255, 204, 102, 0.5)); /* Fondo retro */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+  }
